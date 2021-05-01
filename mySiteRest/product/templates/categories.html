@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<title>List of Category</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-container">
+  <h2>List of Category</h2>
+  <table class="w3-table-all">
+    <thead>
+      <tr class="w3-red">
+        <th>ID</th>
+        <th>Category Title</th>
+        <th>Image</th>
+        <th>Keyword</th>
+        <th>Description</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    {% for category in categories %}
+    <tr>
+      <td>{{category.id}}</td>
+      <td>{{category.Title}}</td>
+      {% if  cartegory.Image is None %}
+      <td><img src="{{ category.Image }}" alt="" style="height:30px; width:40px"></td>
+      {% else %}
+      <td><img src="{{ category.Image }}" alt="" style="height:30px; width:40px"></td>
+      {% endif %}
+      <td>{{category.Keywords}}</td>
+      <td>{{category.Description}}</td>
+      <td>{{category.Status}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+</body>
+</html> 
